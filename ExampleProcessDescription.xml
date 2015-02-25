@@ -1,0 +1,134 @@
+<wps:ProcessDescriptions xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsDescribeProcess_response.xsd" xml:lang="en-US" service="WPS" version="1.0.0">
+<script/>
+<ProcessDescription statusSupported="true" storeSupported="true" wps:processVersion="1.0.0">
+	<ows:Identifier>example.process.ProcessOne</ows:Identifier>
+	<ows:Title>The process title</ows:Title>
+		<DataInputs>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>complexInputOne</ows:Identifier>
+				<ows:Title>Input Title</ows:Title>
+					<ComplexData>
+						<Default>
+							<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+						</Default>
+						<Supported>
+						<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+						</Format>
+						<Format>
+							<MimeType>text/xml; subtype=gml/3.1.0</MimeType>
+							<Schema>
+								http://schemas.opengis.net/gml/3.1.0/base/feature.xsd
+							</Schema>
+						</Format>
+						</Supported>
+					
+					</ComplexData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>literalInputOne</ows:Identifier>
+				<ows:Title>a title</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:string"/>
+						<ows:AnyValue/>
+					</LiteralData>
+			</Input>
+			
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>literalInputTwo</ows:Identifier>
+				<ows:Title>a title</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:string"/>
+						<ows:AnyValue/>
+					</LiteralData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>BooleanInputOne</ows:Identifier>
+				<ows:Title>a title</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:boolean"/>
+						<ows:AnyValue/>
+					</LiteralData>
+			</Input>
+            <Input maxOccurs="1" minOccurs="1">
+                <ows:Identifier>doubleInputOne</ows:Identifier>
+                <ows:Title>a title</ows:Title>
+                <LiteralData>
+                    <ows:DataType ows:reference="xs:double"/>
+                    <ows:AnyValue/>
+                </LiteralData>
+            </Input>
+		</DataInputs>
+	<ProcessOutputs>
+		<Output>
+			<ows:Identifier>complexOutputOne</ows:Identifier>
+			<ows:Title>a title</ows:Title>
+				<ComplexOutput>
+					<Default>
+						<Format>
+							<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+			</Format>
+		</Default>
+		<Supported>
+		<Format>
+							<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+									</Format>
+			<Format>
+							<MimeType>text/xml; subtype=gml/3.1.0</MimeType>
+							<Schema>
+								http://schemas.opengis.net/gml/3.1.0/base/feature.xsd
+							</Schema>
+						</Format>
+		
+		</Supported>
+		</ComplexOutput>
+	</Output>
+	
+	<Output>
+			<ows:Identifier>complexOutputTwo</ows:Identifier>
+			<ows:Title>a title</ows:Title>
+				<ComplexOutput>
+					<Default>
+						<Format>
+							<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+			</Format>
+		</Default>
+		<Supported>
+		<Format>
+							<MimeType>text/xml</MimeType>
+				<Schema>
+					http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+				</Schema>
+			</Format>
+			
+			<Format>
+							<MimeType>text/xml; subtype=gml/3.1.0</MimeType>
+							<Schema>
+								http://schemas.opengis.net/gml/3.1.0/base/feature.xsd
+							</Schema>
+						</Format>
+		</Supported>
+		</ComplexOutput>
+	</Output>
+	
+	
+		</ProcessOutputs>
+	</ProcessDescription>
+</wps:ProcessDescriptions>
