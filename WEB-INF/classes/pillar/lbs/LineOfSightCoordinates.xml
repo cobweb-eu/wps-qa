@@ -1,0 +1,141 @@
+<wps:ProcessDescriptions xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsDescribeProcess_response.xsd" xml:lang="en-US" service="WPS" version="1.0.0">
+<script/>
+<ProcessDescription statusSupported="true" storeSupported="true" wps:processVersion="1.0.0">
+	<ows:Identifier>pillar.lbs.LineOfSightCoordinates</ows:Identifier>
+	<ows:Title>pillar.lbs.LineOfSightCoordinates</ows:Title>
+		<DataInputs>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>inputObservations</ows:Identifier>
+				<ows:Title>inputObservations</ows:Title>
+					<ComplexData>
+						<Default>
+							<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+						</Default>
+						<Supported>
+						<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+						</Supported>
+					
+					</ComplexData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>inputSurfaceModelPath</ows:Identifier>
+				<ows:Title>inputSurfaceModelPath</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:string"/>
+						<ows:AnyValue/>	
+					</LiteralData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>inputBaringFieldName</ows:Identifier>
+				<ows:Title>inputBaringFieldName</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:string"/>
+						<ows:AnyValue/>	
+					</LiteralData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>inputTiltFieldName</ows:Identifier>
+				<ows:Title>inputSurfaceModelPath</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:string"/>
+						<ows:AnyValue/>	
+					</LiteralData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>inputUserHeight</ows:Identifier>
+				<ows:Title>inputUserHeight</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:double"/>
+						<ows:AnyValue/>	
+					</LiteralData>
+			</Input>
+			<Input maxOccurs="1" minOccurs="1">
+				<ows:Identifier>inputSurfaceModelCRS</ows:Identifier>
+				<ows:Title>inputSurfaceModelCRS</ows:Title>
+					<LiteralData>
+						<ows:DataType ows:reference="xs:string"/>
+						<ows:AnyValue/>	
+					</LiteralData>
+			</Input>
+			
+			
+		</DataInputs>
+	<ProcessOutputs>
+		<Output>
+			<ows:Identifier>result</ows:Identifier>
+			<ows:Title>result</ows:Title>
+				<ComplexOutput>
+					<Default>
+						<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+		</Default>
+		<Supported>
+		<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+		</Supported>
+		</ComplexOutput>
+	</Output>
+	
+	<Output>
+			<ows:Identifier>qual_result</ows:Identifier>
+			<ows:Title>result</ows:Title>
+				<ComplexOutput>
+					<Default>
+						<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+		</Default>
+		<Supported>
+		<Format>
+								<MimeType>text/xml; subtype=gml/3.1.1</MimeType>
+								<Schema>
+									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
+								</Schema>
+								</Format>
+		</Supported>
+		</ComplexOutput>
+	</Output>
+	<Output>
+	<ows:Identifier>metadata</ows:Identifier>
+		<ows:Title>metadata</ows:Title>
+		<ows:Abstract>metadata</ows:Abstract>
+			<ComplexOutput>
+				<Default>
+				<Format>
+					<MimeType>text/plain</MimeType>
+			</Format>
+			</Default>
+			<Supported>
+				<Format>
+					<MimeType>text/xml</MimeType>
+				</Format>
+				<Format>
+					<MimeType>text/plain</MimeType>
+				</Format>
+			</Supported>
+		</ComplexOutput>
+		</Output>
+		</ProcessOutputs>
+	</ProcessDescription>
+</wps:ProcessDescriptions>

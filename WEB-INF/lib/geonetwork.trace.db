@@ -1,0 +1,108 @@
+11-06 12:12:18 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLException: Table "SERVICES" not found; SQL statement:
+SELECT * FROM Services [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATA" not found; SQL statement:
+SELECT * FROM Metadata WHERE id = 0 [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "RELATIONS" not found; SQL statement:
+DROP TABLE Relations [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATEGORIES" not found; SQL statement:
+DROP TABLE Categories [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMELEMENTSET" not found; SQL statement:
+DROP TABLE CustomElementSet [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "SETTINGS" not found; SQL statement:
+DROP TABLE Settings [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "LANGUAGES" not found; SQL statement:
+DROP TABLE Languages [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "SOURCES" not found; SQL statement:
+DROP TABLE Sources [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "ISOLANGUAGES" not found; SQL statement:
+DROP TABLE IsoLanguages [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "ISOLANGUAGESDES" not found; SQL statement:
+DROP TABLE IsoLanguagesDes [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "REGIONS" not found; SQL statement:
+DROP TABLE Regions [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "REGIONSDES" not found; SQL statement:
+DROP TABLE RegionsDes [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+DROP TABLE Users [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "OPERATIONS" not found; SQL statement:
+DROP TABLE Operations [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "OPERATIONSDES" not found; SQL statement:
+DROP TABLE OperationsDes [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "REQUESTS" not found; SQL statement:
+DROP TABLE Requests [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "PARAMS" not found; SQL statement:
+DROP TABLE Params [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "HARVESTHISTORY" not found; SQL statement:
+DROP TABLE HarvestHistory [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "GROUPS" not found; SQL statement:
+DROP TABLE Groups [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "GROUPSDES" not found; SQL statement:
+DROP TABLE GroupsDes [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERGROUPS" not found; SQL statement:
+DROP TABLE UserGroups [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATEGORIESDES" not found; SQL statement:
+DROP TABLE CategoriesDes [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATA" not found; SQL statement:
+DROP TABLE Metadata [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "VALIDATION" not found; SQL statement:
+DROP TABLE Validation [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATACATEG" not found; SQL statement:
+DROP TABLE MetadataCateg [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "STATUSVALUES" not found; SQL statement:
+DROP TABLE StatusValues [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "STATUSVALUESDES" not found; SQL statement:
+DROP TABLE StatusValuesDes [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATASTATUS" not found; SQL statement:
+DROP TABLE MetadataStatus [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "OPERATIONALLOWED" not found; SQL statement:
+DROP TABLE OperationAllowed [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATARATING" not found; SQL statement:
+DROP TABLE MetadataRating [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATANOTIFIERS" not found; SQL statement:
+DROP TABLE MetadataNotifiers [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "METADATANOTIFICATIONS" not found; SQL statement:
+DROP TABLE MetadataNotifications [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "CSWSERVERCAPABILITIESINFO" not found; SQL statement:
+DROP TABLE CswServerCapabilitiesInfo [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "THESAURUS" not found; SQL statement:
+DROP TABLE Thesaurus [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "SERVICES" not found; SQL statement:
+DROP TABLE Services [42102-152]
+11-06 12:12:19 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Table "SERVICEPARAMETERS" not found; SQL statement:
+DROP TABLE ServiceParameters [42102-152]
