@@ -150,26 +150,6 @@
 		</Supported>
 		</ComplexOutput>
 	</Output>
-	<Output>
-	<ows:Identifier>metadata</ows:Identifier>
-		<ows:Title>metadata</ows:Title>
-		<ows:Abstract>metadata</ows:Abstract>
-			<ComplexOutput>
-				<Default>
-				<Format>
-					<MimeType>text/plain</MimeType>
-			</Format>
-			</Default>
-			<Supported>
-				<Format>
-					<MimeType>text/xml</MimeType>
-				</Format>
-				<Format>
-					<MimeType>text/plain</MimeType>
-				</Format>
-			</Supported>
-		</ComplexOutput>
-		</Output>
 		</ProcessOutputs>
 	</ProcessDescription>
 </wps:ProcessDescriptions>
