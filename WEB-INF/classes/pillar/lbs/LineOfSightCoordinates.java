@@ -33,6 +33,7 @@ import org.geoviqua.qualityInformationModel.x40.GVQMetadataDocument;
 import org.geoviqua.qualityInformationModel.x40.GVQMetadataType;
 import org.n52.wps.io.data.GenericFileData;
 import org.n52.wps.io.data.IData;
+import org.n52.wps.io.data.binding.complex.GTRasterDataBinding;
 import org.n52.wps.io.data.binding.complex.GTVectorDataBinding;
 import org.n52.wps.io.data.binding.complex.GenericFileDataBinding;
 import org.n52.wps.io.data.binding.literal.LiteralDoubleBinding;
@@ -56,11 +57,10 @@ import com.vividsolutions.jts.geom.Point;
 public class LineOfSightCoordinates extends AbstractAlgorithm {
 	
 	private final String inputObservations = "inputObservations";
-	private final String inputSurfaceModelPath = "inputSurfaceModelPath";
+	private final String inputSurfaceModel = "inputSurfaceModelPath";
 	private final String inputBaringFieldName = "inputBaringFieldName";
 	private final String inputTiltFieldName = "inputTiltFieldName";
 	private final String inputUserHeight = "inputUserHeight";
-	private final String inputSurfaceModelCRS = "inputSurfaceModelCRS";
 	
 	Logger LOGGER = Logger.getLogger(LineOfSightCoordinates.class);
 	
@@ -69,8 +69,8 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 		if (identifier.equalsIgnoreCase("inputObservations")){
 			return GTVectorDataBinding.class;
 		}
-		if (identifier.equalsIgnoreCase("inputSurfaceModelPath")){
-			return LiteralStringBinding.class;
+		if (identifier.equalsIgnoreCase("inputSurfaceModel")){
+			return GenericFileDataBinding.class;
 		}
 		if (identifier.equalsIgnoreCase("inputBaringFieldName")){
 			return LiteralStringBinding.class;
@@ -81,9 +81,6 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 		if (identifier.equalsIgnoreCase("inputUserHeight")){
 			return LiteralDoubleBinding.class;
 		}	
-		if (identifier.equalsIgnoreCase("inputSurfaceModelCRS")){
-			return LiteralStringBinding.class;
-		}
 		
 		return null;
 	}
@@ -96,67 +93,50 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 		if(identifier.equalsIgnoreCase("qual_result")){
 			return GTVectorDataBinding.class;
 		}
-		if(identifier.equalsIgnoreCase("metadata")){
-			return GenericFileDataBinding.class;
-		}
+		
 		return null;
 	}
 
 	@Override
 	public Map<String, IData> run(Map<String, List<IData>> inputData){
 	List<IData> inputObsList = inputData.get("inputObservations");
-	List<IData> inputSMPList = inputData.get("inputSurfaceModelPath");
+	List<IData> inputSMPList = inputData.get("inputSurfaceModel");
 	List<IData> inputBarList = inputData.get("inputBaringFieldName");
 	List<IData> inputTiltList = inputData.get("inputTiltFieldName");
 	List<IData> inputUserList = inputData.get("inputUserHeight");
-	List<IData> inputCRSList = inputData.get("inputSurfaceModelCRS");
 	
+	System.setProperty("org.geotools.referencing.forceXY", "true");
 	FeatureCollection pointInputs = ((GTVectorDataBinding) inputObsList.get(0)).getPayload();
-	String surfaceModelPath = ((LiteralStringBinding)inputSMPList.get(0)).getPayload();
+	
+	GenericFileData surfaceModel = ((GenericFileDataBinding)inputSMPList.get(0)).getPayload();
 	String baringFieldName = ((LiteralStringBinding)inputBarList.get(0)).getPayload();
 	String tiltFieldName = ((LiteralStringBinding)inputTiltList.get(0)).getPayload();
 	double userHeight = ((LiteralDoubleBinding)inputUserList.get(0)).getPayload();
-	String surfaceModelCRS = ((LiteralStringBinding)inputCRSList.get(0)).getPayload();
+	
+	CoordinateReferenceSystem crs = pointInputs.getSchema().getCoordinateReferenceSystem();
+	
+	LOGGER.warn("CRS " + crs.getName() + " " + crs.getName().getCode());
+	
+	//LOGGER.warn("File Path " + surfaceModel.getBaseFile(true).getAbsolutePath());
+	RasterReader rr = new RasterReader(surfaceModel.getBaseFile(true).getAbsolutePath());
 	
 	
+	//LOGGER.warn("Feature Collection Size " + pointInputs.size());
 	
-	RasterReader rr = new RasterReader(surfaceModelPath);
-	
-	
-	LOGGER.warn("Feature Collection Size " + pointInputs.size());
-	LOGGER.warn("inputCRS " + surfaceModelCRS);
 	
 	SimpleFeatureIterator iterator = (SimpleFeatureIterator) pointInputs.features();
 	
 	SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();
-	
-	CRSAuthorityFactory  factory = CRS.getAuthorityFactory(true);
-	
-	CoordinateReferenceSystem sourceCRS = null;
-	
-	CoordinateReferenceSystem projectCRS = null;
-	try {
-		sourceCRS = factory.createCoordinateReferenceSystem("EPSG:4326");
-		projectCRS = factory.createCoordinateReferenceSystem("EPSG:"+surfaceModelCRS);
-	} catch (NoSuchAuthorityCodeException e1) {
-		LOGGER.warn("No Such CRS Authority code " + e1);
-		e1.printStackTrace();
-	} catch (FactoryException e1) {
-		LOGGER.warn("Factory Exception " + e1);
-		e1.printStackTrace();
-	}
-	
-	FeatureCollection rPointInputs = new ReprojectingFeatureCollection(pointInputs, projectCRS);
 
 	//build result feature type
 	b.setName("Temp");
+	//b.setCRS(crs);
 	
-	SimpleFeatureIterator sfi = (SimpleFeatureIterator) rPointInputs.features();
+	SimpleFeatureIterator sfi = (SimpleFeatureIterator) pointInputs.features();
 	
 	SimpleFeature temp = sfi.next();
-	
-	Collection<Property> property = temp.getProperties();
-	
+
+	Collection<Property> property = temp.getProperties();	
 	
 	Iterator<Property> inObsPropIt = property.iterator();
 	
@@ -171,7 +151,7 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 			b.add(name, valueClass);
 			
 
-			//LOGGER.warn ("Obs property " + name + " " + valueClass);
+			LOGGER.warn ("Obs property " + name + " " + valueClass);
 			}
 			catch (Exception e){
 				LOGGER.error("property error " + e);
@@ -187,17 +167,21 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 	
 	headerData=rr.getASCIIHeader();
 	
-	LOGGER.warn("Get raster header " +headerData[0] + " " + headerData[1] + " " + headerData[2] + 
-			" " + headerData[3] + " " +headerData[4] + " " + headerData[5]); 
+	//LOGGER.warn("Get raster header " +headerData[0] + " " + headerData[1] + " " + headerData[2] + 
+		//	" " + headerData[3] + " " +headerData[4] + " " + headerData[5]); 
 	ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
 	FeatureCollection fc = DefaultFeatureCollections.newCollection();
 	
+	
+	
 	SimpleFeatureType outFeat = b.buildFeatureType();
+	
 	
 	SimpleFeatureBuilder builder = new SimpleFeatureBuilder(outFeat);
 			
 	
 	try{
+		int counter = 0;
 		while (iterator.hasNext()){
 			
 			SimpleFeature tempFeature = iterator.next();
@@ -206,12 +190,15 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 			int i = 0;
 
 			
-			/**for (org.opengis.feature.Property property : tempFeature.getProperties()) {
-				  Name name = property.getName();
-				  Object value = tempFeature.getAttribute( property.getName() );
-				  attributes[i] = value;
-				  i++;
-				}**/
+			for (Property obsProperty : tempFeature.getProperties()){
+
+				
+				String name = obsProperty.getName().toString();
+				Object value = obsProperty.getValue();
+				
+				builder.set(name, value);
+				
+			}
 			
 			Geometry geom = (Geometry) tempFeature.getDefaultGeometry();
 			
@@ -220,23 +207,15 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 			
 			GeometryFactory gf2 = new GeometryFactory();
 			
-			Coordinate tempCoord = new Coordinate(geom.getCoordinate().y, geom.getCoordinate().x);
 			
-			Point point2 = gf2.createPoint(tempCoord);
 		
-			MathTransform transform = CRS.findMathTransform(sourceCRS, projectCRS, true);
+		//	LOGGER.warn("Coordinates " + geom.getCoordinate().x + " " + geom.getCoordinate().y);
 			
-			Geometry transformedGeom = JTS.transform(point2, transform);
-			
-			Coordinate coord = transformedGeom.getCoordinate();
-			
-			//LOGGER.warn("Coordinates " + coord.x + " " + coord.y);
-			
-			attributes[0] = tempFeature.getAttribute("DevID");
+			attributes[0] = counter;
 			String URN = attributes[0].toString();
 			
-			attributes[1] = coord.x;				
-			attributes[2] = coord.y;
+			attributes[1] = geom.getCoordinate().x;				
+			attributes[2] = geom.getCoordinate().y;
 			attributes[3] = tempFeature.getAttribute(tiltFieldName);
 			attributes[4] = tempFeature.getAttribute(baringFieldName);
 			
@@ -245,7 +224,7 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 			Double tilt = Double.parseDouble(attributes[3].toString());
 			Double compass = Double.parseDouble(attributes[4].toString());
 	
-			//LOGGER.error(myX + " " + myY + " " +  compass + " " + tilt );
+		//	LOGGER.error(myX + " " + myY + " " +  compass + " " + tilt );
 			
 			double [] myResult = new double[4];
 			
@@ -256,6 +235,8 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 			
 			double easting = myResult[2];
 			double northing = myResult[3];
+			
+		//	LOGGER.warn("Easting " + easting + " northing " + northing);
 			
 			GeometryFactory gf = new GeometryFactory();
 			
@@ -269,14 +250,16 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 			String s = ""+URN;
 			
 			//Geometry geom = point;
-			
+		
 			SimpleFeature feature = builder.buildFeature(s);
+		
 			feature.setDefaultGeometry(point);
+		
 			
-			//LOGGER.warn("output " + feature.toString());
+		//	LOGGER.warn("output " + feature.toString());
 			
 			//SimpleFeature feature = tempFeature;
-			
+			counter++;
 			list.add(feature);
 			
 			
@@ -290,31 +273,14 @@ public class LineOfSightCoordinates extends AbstractAlgorithm {
 	
 	iterator.close();
 	
-	FeatureCollection output = new ListFeatureCollection(outFeat, list);
-	FeatureCollection returnOutput = new ReprojectingFeatureCollection(output, sourceCRS);
-	
-	GenericFileData fd = null;
-	
-	HashMap<String, Object> metadataElements = new HashMap<String, Object>();
-	
-	metadataElements.put("element", "LineOfSightElement");
-	
-	File tempFile = createXMLMetadata(metadataElements);
-	
-	try {
-		fd = new GenericFileData(tempFile,"text/xml");
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
+	FeatureCollection returnOutput = new ListFeatureCollection(outFeat, list);	
+
 	HashMap<String, IData> result = new HashMap<String, IData>();
 	
 	//output the same as input for chaining
 	
 	result.put("result", new GTVectorDataBinding(pointInputs));
 	result.put("qual_result", new GTVectorDataBinding(returnOutput));
-	result.put("metadata", new GenericFileDataBinding(fd));
 	
 return result;
 }
@@ -322,62 +288,7 @@ return result;
 
 
 
-private File createXMLMetadata(HashMap<String,Object> inputs){
 
-	
-	ArrayList< ? > validationErrors = new ArrayList<Object>();
-	XmlOptions options; 
-	options = new XmlOptions();
-	options.setSavePrettyPrint();
-	options.setSaveAggressiveNamespaces();
-
-	HashMap<String, String> suggestedPrefixes = new HashMap<String, String>();
-	suggestedPrefixes.put("http://www.geoviqua.org/QualityInformationModel/4.0", "gvq");
-	options.setSaveSuggestedPrefixes(suggestedPrefixes);
-
-	options.setErrorListener(validationErrors);
-
-	
-	GVQMetadataDocument doc = GVQMetadataDocument.Factory.newInstance();
-	GVQMetadataType gvqMetadata = doc.addNewGVQMetadata();
-	gvqMetadata.addNewLanguage().setCharacterString("en");
-    gvqMetadata.addNewMetadataStandardName().setCharacterString("GVQ");
-    gvqMetadata.addNewMetadataStandardVersion().setCharacterString("1.0.0");
-    gvqMetadata.addNewDateStamp().setDate(Calendar.getInstance());
-    DQDataQualityType quality = gvqMetadata.addNewDataQualityInfo2().addNewDQDataQuality();
-    GVQDataQualityType gvqQuality = (GVQDataQualityType) quality.substitute(new QName("http://www.geoviqua.org/QualityInformationModel/4.0",
-                                                                                          "GVQ_DataQuality"),
-                                                                                GVQDataQualityType.type);
-    GVQDiscoveredIssueType issue = gvqQuality.addNewDiscoveredIssue().addNewGVQDiscoveredIssue();
-    issue.addNewKnownProblem().setCharacterString(inputs.get("element").toString());
-    issue.addNewWorkAround().setCharacterString("LineOfSight");
-
-        // validate schema conformity
-        boolean isValid = doc.validate();
-        if ( !isValid)
-            System.out.println(Arrays.toString(validationErrors.toArray()));
-
-        // print out as XML
-        System.out.println(doc.xmlText(options));
-        
-
-	
-	try {
-		 File tempFile = File.createTempFile("wpsMetdataTempFile", "xml");
-		 
-		 doc.save(tempFile);
-	
-	
-	return tempFile;
-	
-	}
-	catch(Exception e){
-		
-		LOGGER.error("createXMLMetadataError " + e);
-		
-	}
-	return null;
-}
 
 public double[] parseInputData(FeatureCollection fc){
 	double [] inputDataDouble = new double[5];
@@ -400,10 +311,7 @@ private static class GetHeightICanSee {
 	private double myHeight;
 	private double myHeightOffset;
 	private static double distanceToTarget;
-	public GetHeightICanSee(){
-		//constructor to use the inner methods
-		
-	}
+	
 	//rr = the class which parses the raster
 	//theta = compass
 	//elevation = tilt
@@ -615,17 +523,19 @@ private static class GetHeightICanSee {
 private static class RasterReader {
 	//RASTER MUST BE A SQUARE
 	
+	static Logger LOG = Logger.getLogger(LineOfSightCoordinates.class); 
+	
 	String fileName;
 	static double [] headerData = new double[6];
 	double [][]ASCIIData;
 	
-	public RasterReader(String fileName){
+	public RasterReader(String string){
 		
-		this.fileName = fileName;
+		this.fileName = string;
 		
-		headerData = getRasterHeader(fileName);
+		headerData = getRasterHeader(string);
 		ASCIIData = new double[(int)headerData[0]][(int)headerData[1]];
-		ASCIIData = inputASCIIData(fileName);
+		ASCIIData = inputASCIIData(string);
 		
 		
 	}
@@ -637,14 +547,13 @@ private static class RasterReader {
 	//i.e. 5m resolution raster but taken starting with an E of 1 would be eMod 1;
 	
 	//read in header data of study area to calculate the viewshed tile required
-	private static double[] getRasterHeader(String file){
-		Logger rrLOGGER = Logger.getLogger(LineOfSight.class);
+	private static double[] getRasterHeader(String string){
 	BufferedReader br = null;
 	
 	double[] headerData = new double[6];
 	//read in header
 	try {
-		br = new BufferedReader(new FileReader(file));
+		br = new BufferedReader(new FileReader(string));
 		
 		String line = null;
 		double var;
@@ -664,15 +573,13 @@ private static class RasterReader {
 	
 	}
 	catch(Exception e){
-		rrLOGGER.error("rrLOGGER " + e);
 	}
 	
 	return headerData;
 	}
 	
 	// read in the raster
-	private static double[][] inputASCIIData(String rasterPath){
-		Logger rrLOGGER = Logger.getLogger(LineOfSight.class);
+	private static double[][] inputASCIIData(String string){
 		BufferedReader br = null;
 		
 		headerData = new double[6];
@@ -685,7 +592,7 @@ private static class RasterReader {
 		try {
 			//read in DSM
 			
-			br = new BufferedReader(new FileReader(rasterPath));
+			br = new BufferedReader(new FileReader(string));
 			
 			String DSMline = null;
 			
@@ -695,14 +602,62 @@ private static class RasterReader {
 			for(int i = 0; i < 6; i++){
 							
 				DSMline = br.readLine();
+				LOG.warn("Line " + DSMline + " length " + DSMline.length() + " i= " + i);
 				
-				char[] buffer = new char[DSMline.length()];	
-				DSMline.getChars(14,DSMline.length(), buffer, 0);
-				String s = String.valueOf(buffer);
-				var = Double.parseDouble(s);
-				headerData[i] = var;
-							
-				//System.out.println("H = " + var);
+				char[] buffer = new char[DSMline.length()];
+				String s = null;
+				
+				switch (i){
+				case 0: 
+					
+					DSMline.getChars(6,DSMline.length(), buffer, 0);
+					s = String.valueOf(buffer);
+					var = Double.parseDouble(s);
+					headerData[i] = var;
+					break;
+					
+				case 1: 
+			
+					DSMline.getChars(6,DSMline.length(), buffer, 0);
+					s = String.valueOf(buffer);
+					var = Double.parseDouble(s);
+					headerData[i] = var;
+					break;
+				
+				case 2: 
+					
+					DSMline.getChars(9,DSMline.length(), buffer, 0);
+					s = String.valueOf(buffer);
+					var = Double.parseDouble(s);
+					headerData[i] = var;
+					break;
+					
+				case 3: 
+					
+					DSMline.getChars(9,DSMline.length(), buffer, 0);
+					s = String.valueOf(buffer);
+					var = Double.parseDouble(s);
+					headerData[i] = var;
+					break;
+					
+				case 4: 
+					
+					DSMline.getChars(8,DSMline.length(), buffer, 0);
+					s = String.valueOf(buffer);
+					var = Double.parseDouble(s);
+					headerData[i] = var;
+					break;
+					
+				case 5: 
+					
+					DSMline.getChars(12,DSMline.length(), buffer, 0);
+					s = String.valueOf(buffer);
+					var = Double.parseDouble(s);
+					headerData[i] = var;
+					break;					
+				
+				}
+			
 				
 			} 
 			
@@ -728,7 +683,6 @@ private static class RasterReader {
 			br.close();
 		
 			
-			rrLOGGER.debug("Raster read in!");
 			
 							
 		}
@@ -737,10 +691,8 @@ private static class RasterReader {
 				
 			}
 			catch(NullPointerException e){
-				rrLOGGER.error("NullPointerException" + e);
 			}
 			catch(NumberFormatException e){
-				rrLOGGER.error("Number format exception " + e + " " + counter);
 			}
 			
 			

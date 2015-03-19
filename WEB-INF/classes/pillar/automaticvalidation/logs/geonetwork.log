@@ -1,0 +1,222 @@
+2015-03-17 12:24:15,528 INFO  [jeeves] - Upload directory is: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/./data/tmp/
+2015-03-17 12:24:15,541 WARN  [jeeves.dbmspool] - Using transaction isolation setting READ_COMMITTED
+2015-03-17 12:24:18,568 WARN  [jeeves.engine] - Jeeves DBMS service configuration lookup failed (database may not be available yet). Message is: Table "SERVICES" not found; SQL statement:
+SELECT * FROM Services [42102-152]
+2015-03-17 12:24:18,848 INFO  [jeeves.service] - Service csw already exist, re-register it.
+2015-03-17 12:24:18,904 INFO  [jeeves.apphand] - Initializing GeoNetwork 2.10.3-0.SNAPSHOT ...
+2015-03-17 12:24:18,905 WARN  [geonetwork.data.directory] -    - Data directory initialization: null
+2015-03-17 12:24:18,905 WARN  [geonetwork.data.directory] -     - Data directory properties is not set. Use geonetwork.dir or geonetwork.dir properties.
+2015-03-17 12:24:18,905 WARN  [geonetwork.data.directory] -     - Data directory provided could not be used. Using default location: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/
+2015-03-17 12:24:18,905 INFO  [jeeves.apphand] - Data directory: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/
+2015-03-17 12:24:18,905 INFO  [jeeves.apphand] - jeeves.xml.catalog.files property set to /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/oasis-catalog.xml;/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/config/schemaplugin-uri-catalog.xml
+2015-03-17 12:24:18,906 INFO  [jeeves.apphand] - jeeves.xml.catalog.blankxslfile property set to /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/xsl/blanks.xsl
+2015-03-17 12:24:18,906 INFO  [jeeves.apphand] - mime-mappings property set to /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/mime-types.properties
+2015-03-17 12:24:19,027 INFO  [jeeves.apphand] -   - Database connection on jdbc:h2:geonetwork;LOCK_TIMEOUT=20000;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE ...
+2015-03-17 12:24:19,035 INFO  [jeeves.apphand] -       jdbc:h2:geonetwork;LOCK_TIMEOUT=20000;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE is an empty database (Metadata table not found).
+2015-03-17 12:24:19,035 INFO  [jeeves.apphand] -          - SQL create file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/create prefix:create-db- ...
+2015-03-17 12:24:19,203 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:data-db- ...
+2015-03-17 12:24:19,427 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-eng- ...
+2015-03-17 12:24:19,571 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-fre- ...
+2015-03-17 12:24:19,663 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-ger- ...
+2015-03-17 12:24:19,737 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-spa- ...
+2015-03-17 12:24:19,818 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-cat- ...
+2015-03-17 12:24:19,936 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-rus- ...
+2015-03-17 12:24:20,037 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-por- ...
+2015-03-17 12:24:20,127 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-chi- ...
+2015-03-17 12:24:20,209 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-dut- ...
+2015-03-17 12:24:20,284 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-nor- ...
+2015-03-17 12:24:20,358 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-fin- ...
+2015-03-17 12:24:20,422 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-ara- ...
+2015-03-17 12:24:20,484 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-ita- ...
+2015-03-17 12:24:20,559 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-tur- ...
+2015-03-17 12:24:20,630 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-vie- ...
+2015-03-17 12:24:20,720 INFO  [jeeves.apphand] -          - SQL data file:/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/classes/setup/sql/data prefix:loc-pol- ...
+2015-03-17 12:24:21,221 INFO  [jeeves.apphand] -       Setting catalogue logo for current node identified by: 7cbd967e-54c2-4a21-868f-e6a156c67ca6
+2015-03-17 12:24:21,223 INFO  [jeeves.apphand] -   - Thread Pool...
+2015-03-17 12:24:21,225 INFO  [jeeves.apphand] -   - Setting manager...
+2015-03-17 12:24:21,241 INFO  [jeeves.apphand] -   - Migration ...
+2015-03-17 12:24:21,241 INFO  [jeeves.apphand] -       Webapp   version:2.10.3-0 subversion:SNAPSHOT
+2015-03-17 12:24:21,241 INFO  [jeeves.apphand] -       Database version:2.10.3 subversion:0
+2015-03-17 12:24:21,241 INFO  [jeeves.apphand] -       Webapp version = Database version, no migration task to apply.
+2015-03-17 12:24:21,242 INFO  [jeeves.apphand] -   - Z39.50...
+2015-03-17 12:24:21,271 INFO  [jeeves.apphand] -      Repositories file built from template.
+2015-03-17 12:24:21,274 INFO  [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f51f87: startup date [Tue Mar 17 12:24:21 GMT 2015]; root of context hierarchy
+2015-03-17 12:24:21,276 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [JZkitApplicationContext.xml]
+2015-03-17 12:24:21,755 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:24:21,834 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:24:21,836 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:24:21,839 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:24:21,937 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3255bb6b: defining beans [JZKitZ3950PluginMetadata,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,QB-CQL,org.jzkit.recordbuilder.iso2709,org.jzkit.recordbuilder.xml,org.jzkit.recordbuilder.string,messageSource,ContextGateway,OIDRegister,Z3950Listener,JZKit2SearchBackend,JZKitConfig,ProfileService,TransformationService,RecordBuilderService,StatelessQueryService,SearchSession,SearchSessionFactory,RPNToInternalRules,InternalToType1ConversionRules,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2015-03-17 12:24:22,383 INFO  [jeeves.apphand] -      Server is Enabled.
+2015-03-17 12:24:22,384 INFO  [jeeves.apphand] -   - Schema manager...
+2015-03-17 12:24:22,384 INFO  [jeeves.apphand] - 			- Schema plugins directory: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/config/schema_plugins
+2015-03-17 12:24:22,384 INFO  [jeeves.apphand] - 			- Schema Catalog File     : /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/config/schemaplugin-uri-catalog.xml
+2015-03-17 12:24:22,566 WARN  [geonetwork.schemamanager] - Cannot resolve http://www.w3.org/2001/03/xml.xsd: will append last component to current path (not sure it will help though!)
+2015-03-17 12:24:22,945 WARN  [geonetwork.schemamanager] - WARNING: gco:Record is a global element without a type - assuming a string
+2015-03-17 12:24:23,241 WARN  [geonetwork.schemamanager] - WARNING: gco:Record is a global element without a type - assuming a string
+2015-03-17 12:24:23,247 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalDatum
+2015-03-17 12:24:23,251 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:24:23,253 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalCS
+2015-03-17 12:24:23,256 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:24:24,494 WARN  [geonetwork.schemamanager] - WARNING: gco:Record is a global element without a type - assuming a string
+2015-03-17 12:24:24,500 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalDatum
+2015-03-17 12:24:24,505 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:24:24,508 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml specified srv:SV_ServiceIdentification for element gmd:AbstractMD_Identification but the schema does not define this as a valid substitute
+2015-03-17 12:24:24,509 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalCS
+2015-03-17 12:24:24,519 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:24:24,617 INFO  [jeeves.apphand] -   - Search...
+2015-03-17 12:24:24,617 INFO  [jeeves.apphand] -   - Log spatial object: false
+2015-03-17 12:24:24,617 INFO  [jeeves.apphand] -   - Log in asynch mode: true
+2015-03-17 12:24:24,638 INFO  [jeeves.apphand] -   - Lucene configuration is:
+2015-03-17 12:24:24,638 INFO  [jeeves.apphand] - Lucene configuration:
+ * Version: LUCENE_36
+ * RAMBufferSize: 48.0
+ * MergeFactor: 10
+ * Default analyzer: org.fao.geonet.kernel.search.GeoNetworkAnalyzer
+ * Field analyzers: {operatesOn=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, hasfeaturecat=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, subject=org.apache.lucene.analysis.core.KeywordAnalyzer, hassource=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _groupPublished=org.apache.lucene.analysis.core.KeywordAnalyzer, _source=org.apache.lucene.analysis.core.KeywordAnalyzer, _uuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _cat=org.apache.lucene.analysis.core.KeywordAnalyzer, keyword=org.apache.lucene.analysis.core.KeywordAnalyzer, parentUuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, inspirerelated=org.apache.lucene.analysis.core.KeywordAnalyzer, operatesOnIdentifier=org.fao.geonet.kernel.search.GeoNetworkAnalyzer}
+ * Field search analyzers: {subject=org.apache.lucene.analysis.core.KeywordAnalyzer, hassource=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _groupPublished=org.apache.lucene.analysis.core.KeywordAnalyzer, _uuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, parentUuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, operatesOn=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, hasfeaturecat=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _source=org.apache.lucene.analysis.core.KeywordAnalyzer, _cat=org.apache.lucene.analysis.core.KeywordAnalyzer, keyword=org.apache.lucene.analysis.core.KeywordAnalyzer, inspirerelated=org.apache.lucene.analysis.core.KeywordAnalyzer, operatesOnIdentifier=org.fao.geonet.kernel.search.GeoNetworkAnalyzer}
+ * Field boost factor: {_isTemplate=0.0, _owner=0.0, _op0=0.0, _op1=0.0, _dummy=0.0, _op2=0.0}
+ * Boost document class: null
+ * Tokenized fields: [specificationTitle, subject, altTitle, keywordType, levelName, abstract, title, any]
+ * Numeric fields: [eastBL, southBL, northBL, westBL, denominator]
+ * Dump fields: {serviceType=serviceType, _isPublishedToAll=isPublishedToAll, _edit=edit, _owner=owner, responsibleParty=responsibleParty, link=link, _indexingError=idxError, language=language, _defaultTitle=defaultTitle, type=type, datasetLang=datasetLang, _isHarvested=isHarvested, _displayOrder=displayOrder, _selected=selected, _docLocale=docLocale, conditionApplyingToAccessAndUse=Constraints, _popularity=popularity, _userinfo=userinfo, _download=download, keyword=keyword, credit=credit, _indexingErrorMsg=idxMsg, _valid_xsd=valid_xsd, _notify=notify, _featured=featured, otherConstr=Constraints, image=image, _valid_schematron-rules-iso=valid_schematron-rules-iso, _ownername=ownername, _valid_schematron-rules-geonetwork=valid_schematron-rules-geonetwork, _title=title, abstract=abstract, accessConstr=Constraints, parentUuid=parentId, _isTemplate=isTemplate, _valid_schematron-rules-inspire=valid_schematron-rules-inspire, classif=SecurityConstraints, _view=view, _dynamic=dynamic, _valid=valid, spatialRepresentationType=spatialRepresentationType, _rating=rating, _source=source, _cat=category, _locale=_locale, geoBox=geoBox}
+ * Search boost query: null
+ * Score: 
+  * trackDocScores: false 
+  * trackMaxScore: false 
+  * docsScoredInOrder: false 
+Taxonomy configuration: [hits, results_with_summary, titles, results]
+  * type: hits
+{serviceType=Field: serviceType	name:serviceType	max:10	sort byCOUNT	sort order:DESCENDING, inspiretheme=Field: inspiretheme	name:inspireTheme	max:35	sort byVALUE	sort order:ASCENDIND, orgName=Field: orgName	name:orgName	max:15	sort byCOUNT	sort order:DESCENDING, spatialRepresentationType=Field: spatialRepresentationType	name:spatialRepresentationType	max:10	sort byCOUNT	sort order:DESCENDING, metadataPOC=Field: metadataPOC	name:metadataPOC	max:15	sort byCOUNT	sort order:DESCENDING, keyword=Field: keyword	name:keyword	max:15	sort byCOUNT	sort order:DESCENDING, type=Field: type	name:type	max:10	sort byCOUNT	sort order:DESCENDING, createDateYear=Field: createDateYear	name:createDateYear	max:40	sort byVALUE	sort order:DESCENDING, denominator=Field: denominator	name:denominator	max:10	sort byNUMVALUE	sort order:DESCENDING}  * type: results_with_summary
+{serviceType=Field: serviceType	name:serviceType	max:10	sort byCOUNT	sort order:DESCENDING, inspiretheme=Field: inspiretheme	name:inspireTheme	max:35	sort byVALUE	sort order:ASCENDIND, orgName=Field: orgName	name:orgName	max:15	sort byCOUNT	sort order:DESCENDING, spatialRepresentationType=Field: spatialRepresentationType	name:spatialRepresentationType	max:10	sort byCOUNT	sort order:DESCENDING, metadataPOC=Field: metadataPOC	name:metadataPOC	max:15	sort byCOUNT	sort order:DESCENDING, keyword=Field: keyword	name:keyword	max:15	sort byCOUNT	sort order:DESCENDING, type=Field: type	name:type	max:10	sort byCOUNT	sort order:DESCENDING, createDateYear=Field: createDateYear	name:createDateYear	max:40	sort byCOUNT	sort order:ASCENDIND, denominator=Field: denominator	name:denominator	max:20	sort byVALUE	sort order:ASCENDIND}  * type: titles
+{title=Field: title	name:title	max:100	sort byCOUNT	sort order:DESCENDING}  * type: results
+{keyword=Field: keyword	name:keyword	max:100	sort byCOUNT	sort order:DESCENDING}
+2015-03-17 12:24:24,638 INFO  [jeeves.apphand] - Using shapefile /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/index/spatialindex.shp
+2015-03-17 12:24:25,181 INFO  [jeeves.apphand] - NOTE: Using shapefile for spatial index, this can be slow for larger catalogs
+2015-03-17 12:24:25,481 WARN  [geonetwork.lucene] - Stopwords file with incorrect ISO 639-2 language as filename: README
+2015-03-17 12:24:26,204 INFO  [jeeves.apphand] -   - Access manager...
+2015-03-17 12:24:26,206 INFO  [jeeves.apphand] -   - Xml serializer and Data manager...
+2015-03-17 12:24:26,691 WARN  [geonetwork.svnmanager] - Recreating subversion repository at /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/data/metadata_subversion as previous repository was empty
+2015-03-17 12:24:27,185 INFO  [jeeves.apphand] -   - Thesaurus...
+2015-03-17 12:24:27,194 INFO  [jeeves.apphand] -   - Catalogue services for the web...
+2015-03-17 12:24:27,219 INFO  [jeeves.apphand] -   - Open Archive Initiative (OAI-PMH) server...
+2015-03-17 12:24:27,236 INFO  [jeeves.apphand] -   - Metadata notifier ...
+2015-03-17 12:24:27,236 INFO  [jeeves.apphand] -   - Metadata notifier ...
+2015-03-17 12:24:27,237 INFO  [jeeves.apphand] - Site ID is : 7cbd967e-54c2-4a21-868f-e6a156c67ca6
+2015-03-17 12:24:27,237 INFO  [jeeves.apphand] -   - Harvest manager...
+2015-03-17 12:25:10,529 INFO  [jeeves.apphand] - Stopping geonetwork...
+2015-03-17 12:25:10,531 INFO  [jeeves.apphand] - shutting down CSW HarvestResponse executionService
+2015-03-17 12:25:10,532 INFO  [jeeves.apphand] -   - search...
+2015-03-17 12:25:10,553 INFO  [jeeves.apphand] -   - ThreadPool ...
+2015-03-17 12:25:10,553 INFO  [jeeves.apphand] -   - MetadataNotifier ...
+2015-03-17 12:25:10,553 INFO  [jeeves.apphand] -   - Harvest Manager...
+2015-03-17 12:25:10,554 INFO  [jeeves.apphand] -   - Z39.50...
+2015-03-17 12:25:10,557 ERROR [org.jzkit.z3950.server.Z3950Listener] - Problem
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at org.jzkit.z3950.server.Z3950Listener.run(Z3950Listener.java:74)
+2015-03-17 12:25:10,586 INFO  [jeeves.config.springutil.JeevesApplicationContext] - Closing Root WebApplicationContext: startup date [Tue Mar 17 12:24:13 GMT 2015]; root of context hierarchy
+2015-03-17 12:25:10,591 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5450c1a3: defining beans [filterChainProxy,coreFilterChain,filter,preAuthenticationFilter,securityContextPersistenceFilter,authenticationManager,securityContextRepository,formLoginFilter,basicAuthenticationFilter,basicAuthenticationEntryPoint,logoutFilter,logoutSuccessHandler,requestCacheFilter,exceptionTranslationFilter,authenticationEntryPoint,accessDeniedHandler,geonetworkEncoder,geonetworkAuthenticationProvider,preFilterAuthenticationProvider,accessDecisionManager,anonymousFilter,anonymousProvider,sessionMgmtFilter,webPrivilegeEvaluatorCore,overrideWebPrivilegeEvaluator,org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0,coreFilterSecurityMetadataSource,filterSecurityInterceptor,org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#1,url-mapping-overrides,overridefilterSecurityInterceptor,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,languages,RegionsDAO]; root of factory hierarchy
+2015-03-17 12:25:29,340 INFO  [jeeves] - Upload directory is: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/./data/tmp/
+2015-03-17 12:25:29,351 WARN  [jeeves.dbmspool] - Using transaction isolation setting READ_COMMITTED
+2015-03-17 12:25:35,152 INFO  [jeeves.service] - Service csw already exist, re-register it.
+2015-03-17 12:25:35,202 INFO  [jeeves.apphand] - Initializing GeoNetwork 2.10.3-0.SNAPSHOT ...
+2015-03-17 12:25:35,203 WARN  [geonetwork.data.directory] -    - Data directory initialization: null
+2015-03-17 12:25:35,204 WARN  [geonetwork.data.directory] -     - Data directory properties is not set. Use geonetwork.dir or geonetwork.dir properties.
+2015-03-17 12:25:35,204 WARN  [geonetwork.data.directory] -     - Data directory provided could not be used. Using default location: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/
+2015-03-17 12:25:35,204 INFO  [jeeves.apphand] - Data directory: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/
+2015-03-17 12:25:35,204 INFO  [jeeves.apphand] - jeeves.xml.catalog.files property set to /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/oasis-catalog.xml;/usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/config/schemaplugin-uri-catalog.xml
+2015-03-17 12:25:35,204 INFO  [jeeves.apphand] - jeeves.xml.catalog.blankxslfile property set to /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/xsl/blanks.xsl
+2015-03-17 12:25:35,204 INFO  [jeeves.apphand] - mime-mappings property set to /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/mime-types.properties
+2015-03-17 12:25:35,301 INFO  [jeeves.apphand] -   - Database connection on jdbc:h2:geonetwork;LOCK_TIMEOUT=20000;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE ...
+2015-03-17 12:25:35,307 INFO  [jeeves.apphand] -       Found an existing GeoNetwork database.
+2015-03-17 12:25:35,307 INFO  [jeeves.apphand] -   - Thread Pool...
+2015-03-17 12:25:35,309 INFO  [jeeves.apphand] -   - Setting manager...
+2015-03-17 12:25:35,326 INFO  [jeeves.apphand] -   - Migration ...
+2015-03-17 12:25:35,326 INFO  [jeeves.apphand] -       Webapp   version:2.10.3-0 subversion:SNAPSHOT
+2015-03-17 12:25:35,326 INFO  [jeeves.apphand] -       Database version:2.10.3 subversion:0
+2015-03-17 12:25:35,327 INFO  [jeeves.apphand] -       Webapp version = Database version, no migration task to apply.
+2015-03-17 12:25:35,328 INFO  [jeeves.apphand] -   - Z39.50...
+2015-03-17 12:25:35,352 INFO  [jeeves.apphand] -      Repositories file built from template.
+2015-03-17 12:25:35,354 INFO  [org.springframework.context.support.ClassPathXmlApplicationContext] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d30fc5e: startup date [Tue Mar 17 12:25:35 GMT 2015]; root of context hierarchy
+2015-03-17 12:25:35,356 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [JZkitApplicationContext.xml]
+2015-03-17 12:25:35,552 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:25:35,617 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:25:35,620 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:25:35,622 INFO  [org.springframework.context.annotation.ClassPathBeanDefinitionScanner] - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-03-17 12:25:35,707 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5da56879: defining beans [JZKitZ3950PluginMetadata,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,QB-CQL,org.jzkit.recordbuilder.iso2709,org.jzkit.recordbuilder.xml,org.jzkit.recordbuilder.string,messageSource,ContextGateway,OIDRegister,Z3950Listener,JZKit2SearchBackend,JZKitConfig,ProfileService,TransformationService,RecordBuilderService,StatelessQueryService,SearchSession,SearchSessionFactory,RPNToInternalRules,InternalToType1ConversionRules,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2015-03-17 12:25:36,481 INFO  [jeeves.apphand] -      Server is Enabled.
+2015-03-17 12:25:36,483 INFO  [jeeves.apphand] -   - Schema manager...
+2015-03-17 12:25:36,483 INFO  [jeeves.apphand] - 			- Schema plugins directory: /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/config/schema_plugins
+2015-03-17 12:25:36,483 INFO  [jeeves.apphand] - 			- Schema Catalog File     : /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/config/schemaplugin-uri-catalog.xml
+2015-03-17 12:25:36,846 WARN  [geonetwork.schemamanager] - Cannot resolve http://www.w3.org/2001/03/xml.xsd: will append last component to current path (not sure it will help though!)
+2015-03-17 12:25:37,070 WARN  [geonetwork.schemamanager] - WARNING: gco:Record is a global element without a type - assuming a string
+2015-03-17 12:25:37,293 WARN  [geonetwork.schemamanager] - WARNING: gco:Record is a global element without a type - assuming a string
+2015-03-17 12:25:37,300 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalDatum
+2015-03-17 12:25:37,303 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:25:37,305 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalCS
+2015-03-17 12:25:37,313 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:25:38,252 WARN  [geonetwork.schemamanager] - WARNING: gco:Record is a global element without a type - assuming a string
+2015-03-17 12:25:38,263 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalDatum
+2015-03-17 12:25:38,271 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:25:38,277 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml specified srv:SV_ServiceIdentification for element gmd:AbstractMD_Identification but the schema does not define this as a valid substitute
+2015-03-17 12:25:38,278 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:VerticalCS
+2015-03-17 12:25:38,293 WARN  [geonetwork.schemamanager] - WARNING: schema-substitutions.xml has wiped out XSD substitution list for gml:CoordinateSystemAxis
+2015-03-17 12:25:38,371 INFO  [jeeves.apphand] -   - Search...
+2015-03-17 12:25:38,372 INFO  [jeeves.apphand] -   - Log spatial object: false
+2015-03-17 12:25:38,372 INFO  [jeeves.apphand] -   - Log in asynch mode: true
+2015-03-17 12:25:38,390 INFO  [jeeves.apphand] -   - Lucene configuration is:
+2015-03-17 12:25:38,391 INFO  [jeeves.apphand] - Lucene configuration:
+ * Version: LUCENE_36
+ * RAMBufferSize: 48.0
+ * MergeFactor: 10
+ * Default analyzer: org.fao.geonet.kernel.search.GeoNetworkAnalyzer
+ * Field analyzers: {operatesOn=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, hasfeaturecat=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, subject=org.apache.lucene.analysis.core.KeywordAnalyzer, hassource=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _groupPublished=org.apache.lucene.analysis.core.KeywordAnalyzer, _source=org.apache.lucene.analysis.core.KeywordAnalyzer, _uuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _cat=org.apache.lucene.analysis.core.KeywordAnalyzer, keyword=org.apache.lucene.analysis.core.KeywordAnalyzer, parentUuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, inspirerelated=org.apache.lucene.analysis.core.KeywordAnalyzer, operatesOnIdentifier=org.fao.geonet.kernel.search.GeoNetworkAnalyzer}
+ * Field search analyzers: {subject=org.apache.lucene.analysis.core.KeywordAnalyzer, hassource=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _groupPublished=org.apache.lucene.analysis.core.KeywordAnalyzer, _uuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, parentUuid=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, operatesOn=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, hasfeaturecat=org.fao.geonet.kernel.search.GeoNetworkAnalyzer, _source=org.apache.lucene.analysis.core.KeywordAnalyzer, _cat=org.apache.lucene.analysis.core.KeywordAnalyzer, keyword=org.apache.lucene.analysis.core.KeywordAnalyzer, inspirerelated=org.apache.lucene.analysis.core.KeywordAnalyzer, operatesOnIdentifier=org.fao.geonet.kernel.search.GeoNetworkAnalyzer}
+ * Field boost factor: {_isTemplate=0.0, _owner=0.0, _op0=0.0, _op1=0.0, _dummy=0.0, _op2=0.0}
+ * Boost document class: null
+ * Tokenized fields: [specificationTitle, subject, altTitle, keywordType, levelName, abstract, title, any]
+ * Numeric fields: [eastBL, southBL, northBL, westBL, denominator]
+ * Dump fields: {serviceType=serviceType, _isPublishedToAll=isPublishedToAll, _edit=edit, _owner=owner, responsibleParty=responsibleParty, link=link, _indexingError=idxError, language=language, _defaultTitle=defaultTitle, type=type, datasetLang=datasetLang, _isHarvested=isHarvested, _displayOrder=displayOrder, _selected=selected, _docLocale=docLocale, conditionApplyingToAccessAndUse=Constraints, _popularity=popularity, _userinfo=userinfo, _download=download, keyword=keyword, credit=credit, _indexingErrorMsg=idxMsg, _valid_xsd=valid_xsd, _notify=notify, _featured=featured, otherConstr=Constraints, image=image, _valid_schematron-rules-iso=valid_schematron-rules-iso, _ownername=ownername, _valid_schematron-rules-geonetwork=valid_schematron-rules-geonetwork, _title=title, abstract=abstract, accessConstr=Constraints, parentUuid=parentId, _isTemplate=isTemplate, _valid_schematron-rules-inspire=valid_schematron-rules-inspire, classif=SecurityConstraints, _view=view, _dynamic=dynamic, _valid=valid, spatialRepresentationType=spatialRepresentationType, _rating=rating, _source=source, _cat=category, _locale=_locale, geoBox=geoBox}
+ * Search boost query: null
+ * Score: 
+  * trackDocScores: false 
+  * trackMaxScore: false 
+  * docsScoredInOrder: false 
+Taxonomy configuration: [hits, results_with_summary, titles, results]
+  * type: hits
+{serviceType=Field: serviceType	name:serviceType	max:10	sort byCOUNT	sort order:DESCENDING, inspiretheme=Field: inspiretheme	name:inspireTheme	max:35	sort byVALUE	sort order:ASCENDIND, orgName=Field: orgName	name:orgName	max:15	sort byCOUNT	sort order:DESCENDING, spatialRepresentationType=Field: spatialRepresentationType	name:spatialRepresentationType	max:10	sort byCOUNT	sort order:DESCENDING, metadataPOC=Field: metadataPOC	name:metadataPOC	max:15	sort byCOUNT	sort order:DESCENDING, keyword=Field: keyword	name:keyword	max:15	sort byCOUNT	sort order:DESCENDING, type=Field: type	name:type	max:10	sort byCOUNT	sort order:DESCENDING, createDateYear=Field: createDateYear	name:createDateYear	max:40	sort byVALUE	sort order:DESCENDING, denominator=Field: denominator	name:denominator	max:10	sort byNUMVALUE	sort order:DESCENDING}  * type: results_with_summary
+{serviceType=Field: serviceType	name:serviceType	max:10	sort byCOUNT	sort order:DESCENDING, inspiretheme=Field: inspiretheme	name:inspireTheme	max:35	sort byVALUE	sort order:ASCENDIND, orgName=Field: orgName	name:orgName	max:15	sort byCOUNT	sort order:DESCENDING, spatialRepresentationType=Field: spatialRepresentationType	name:spatialRepresentationType	max:10	sort byCOUNT	sort order:DESCENDING, metadataPOC=Field: metadataPOC	name:metadataPOC	max:15	sort byCOUNT	sort order:DESCENDING, keyword=Field: keyword	name:keyword	max:15	sort byCOUNT	sort order:DESCENDING, type=Field: type	name:type	max:10	sort byCOUNT	sort order:DESCENDING, createDateYear=Field: createDateYear	name:createDateYear	max:40	sort byCOUNT	sort order:ASCENDIND, denominator=Field: denominator	name:denominator	max:20	sort byVALUE	sort order:ASCENDIND}  * type: titles
+{title=Field: title	name:title	max:100	sort byCOUNT	sort order:DESCENDING}  * type: results
+{keyword=Field: keyword	name:keyword	max:100	sort byCOUNT	sort order:DESCENDING}
+2015-03-17 12:25:38,391 INFO  [jeeves.apphand] - Using shapefile /usr/local/apache-tomcat-7.0.55/webapps/geonetwork/WEB-INF/data/index/spatialindex.shp
+2015-03-17 12:25:38,905 INFO  [jeeves.apphand] - NOTE: Using shapefile for spatial index, this can be slow for larger catalogs
+2015-03-17 12:25:39,178 WARN  [geonetwork.lucene] - Stopwords file with incorrect ISO 639-2 language as filename: README
+2015-03-17 12:25:39,863 INFO  [jeeves.apphand] -   - Access manager...
+2015-03-17 12:25:39,865 INFO  [jeeves.apphand] -   - Xml serializer and Data manager...
+2015-03-17 12:25:40,817 INFO  [jeeves.apphand] -   - Thesaurus...
+2015-03-17 12:25:40,829 INFO  [jeeves.apphand] -   - Catalogue services for the web...
+2015-03-17 12:25:40,850 INFO  [jeeves.apphand] -   - Open Archive Initiative (OAI-PMH) server...
+2015-03-17 12:25:40,871 INFO  [jeeves.apphand] -   - Metadata notifier ...
+2015-03-17 12:25:40,871 INFO  [jeeves.apphand] -   - Metadata notifier ...
+2015-03-17 12:25:40,871 INFO  [jeeves.apphand] - Site ID is : 7cbd967e-54c2-4a21-868f-e6a156c67ca6
+2015-03-17 12:25:40,872 INFO  [jeeves.apphand] -   - Harvest manager...
+2015-03-17 18:01:48,394 INFO  [jeeves.apphand] - Stopping geonetwork...
+2015-03-17 18:01:48,396 INFO  [jeeves.apphand] - shutting down CSW HarvestResponse executionService
+2015-03-17 18:01:48,568 INFO  [jeeves.apphand] -   - search...
+2015-03-17 18:01:48,584 INFO  [jeeves.apphand] -   - ThreadPool ...
+2015-03-17 18:01:48,584 INFO  [jeeves.apphand] -   - MetadataNotifier ...
+2015-03-17 18:01:48,584 INFO  [jeeves.apphand] -   - Harvest Manager...
+2015-03-17 18:01:48,585 INFO  [jeeves.apphand] -   - Z39.50...
+2015-03-17 18:01:48,587 ERROR [org.jzkit.z3950.server.Z3950Listener] - Problem
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at org.jzkit.z3950.server.Z3950Listener.run(Z3950Listener.java:74)
+2015-03-17 18:01:48,635 INFO  [jeeves.config.springutil.JeevesApplicationContext] - Closing Root WebApplicationContext: startup date [Tue Mar 17 12:25:27 GMT 2015]; root of context hierarchy
+2015-03-17 18:01:48,644 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4ba3104: defining beans [filterChainProxy,coreFilterChain,filter,preAuthenticationFilter,securityContextPersistenceFilter,authenticationManager,securityContextRepository,formLoginFilter,basicAuthenticationFilter,basicAuthenticationEntryPoint,logoutFilter,logoutSuccessHandler,requestCacheFilter,exceptionTranslationFilter,authenticationEntryPoint,accessDeniedHandler,geonetworkEncoder,geonetworkAuthenticationProvider,preFilterAuthenticationProvider,accessDecisionManager,anonymousFilter,anonymousProvider,sessionMgmtFilter,webPrivilegeEvaluatorCore,overrideWebPrivilegeEvaluator,org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0,coreFilterSecurityMetadataSource,filterSecurityInterceptor,org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#1,url-mapping-overrides,overridefilterSecurityInterceptor,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,languages,RegionsDAO]; root of factory hierarchy

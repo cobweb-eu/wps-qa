@@ -104,17 +104,15 @@ public class PointInBuffer extends AbstractAlgorithm{
 		
 		LOG.warn("+++++++++HERE+++++++++++");
 		
-		FeatureCollection obsFcW = ((GTVectorDataBinding) inputObs.get(0)).getPayload();
-		FeatureCollection authFcW = ((GTVectorDataBinding) inputAuth.get(0)).getPayload();
+		FeatureCollection obsFc = ((GTVectorDataBinding) inputObs.get(0)).getPayload();
+		FeatureCollection authFc = ((GTVectorDataBinding) inputAuth.get(0)).getPayload();
 		double bufferDistance = ((LiteralDoubleBinding) inputDis.get(0)).getPayload();
 		
-		SimpleFeatureIterator sfi = (SimpleFeatureIterator) obsFcW.features();
+		SimpleFeatureIterator sfi = (SimpleFeatureIterator) obsFc.features();
 		SimpleFeature tempPropFeature = sfi.next();
 		
 		
-		CoordinateReferenceSystem inputObsCrs = (CoordinateReferenceSystem)(((SimpleFeature)obsFcW.features().next()).getDefaultGeometryProperty()).getUserData(); 
-		CoordinateReferenceSystem inputAuthCrs =(CoordinateReferenceSystem)(((SimpleFeature)authFcW.features().next()).getDefaultGeometryProperty()).getUserData(); 
-		LOG.warn("Obs and Auth CRS " + inputObsCrs + " " + inputAuthCrs);
+		
 		Collection<Property> obsProp = tempPropFeature.getProperties();
 		
 		
@@ -154,33 +152,6 @@ public class PointInBuffer extends AbstractAlgorithm{
 		
 		SimpleFeatureType typeF = resultTypeBuilder.buildFeatureType();
 		LOG.warn("Get Spatial Accuracy Feature Type " + typeF.toString());
-		
-		CoordinateReferenceSystem sourceCRS = obsFcW.getSchema().getCoordinateReferenceSystem();
-		
-		
-		
-		CoordinateReferenceSystem projectCRS = null;
-		
-		CRSAuthorityFactory factory = CRS.getAuthorityFactory(true);
-		try {
-			projectCRS = factory.createCoordinateReferenceSystem("EPSG:27700");
-		//	inputObsCrs = factory.createCoordinateReferenceSystem("EPSG:4326");
-		//	inputAuthCRS = factory.createCoordinateReferenceSystem("EPSG:4326");
-		} catch (NoSuchAuthorityCodeException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (FactoryException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		resultTypeBuilder.setCRS(projectCRS);
-		
-		LOG.warn("inputObsCrs " + inputObsCrs + " inputAuthCrs " + inputAuthCrs);
-		
-		
-		FeatureCollection obsFc = new ReprojectingFeatureCollection(obsFcW, inputObsCrs, projectCRS);
-		FeatureCollection authFc = new ReprojectingFeatureCollection(authFcW, inputAuthCrs, projectCRS);
-		
 		
 		
 		ArrayList<SimpleFeature> resultArrayList = new ArrayList<SimpleFeature>(); 
@@ -252,17 +223,15 @@ public class PointInBuffer extends AbstractAlgorithm{
 		obsIt2.close();
 		FeatureCollection resultFeatureCollection = new ListFeatureCollection(typeF, resultArrayList);
 		
-		FeatureCollection returnFeatureCollection = new ReprojectingFeatureCollection(resultFeatureCollection, projectCRS, inputObsCrs);
 		
 		FeatureCollection qual_resultFeatureCollection = new ListFeatureCollection(typeF, qual_resultArrayList);
-		FeatureCollection returnQual_ResultFeatureCollection = new ReprojectingFeatureCollection(qual_resultFeatureCollection, projectCRS, inputObsCrs);
 		
 		LOG.warn("Feature Collection Size " + resultFeatureCollection.size());
 	
 		
 		HashMap<String, IData> results = new HashMap<String, IData>();
-		results.put("result", new GTVectorDataBinding((FeatureCollection)returnFeatureCollection));
-		results.put("qual_result", new GTVectorDataBinding((FeatureCollection)returnQual_ResultFeatureCollection));
+		results.put("result", new GTVectorDataBinding((FeatureCollection)resultFeatureCollection));
+		results.put("qual_result", new GTVectorDataBinding((FeatureCollection)qual_resultFeatureCollection));
 		
 		
 		
