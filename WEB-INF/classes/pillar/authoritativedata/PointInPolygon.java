@@ -45,6 +45,7 @@ public class PointInPolygon extends AbstractAlgorithm {
 	private final String inputObservations = "inputObservations";
 	private final String inputAuthoritativeData = "inputAuthoritativeData";
 	
+	
 	@Override
 	public Class<?> getInputDataType(String identifier) {
 		if(identifier.equalsIgnoreCase( "inputObservations")){
@@ -220,65 +221,11 @@ public class PointInPolygon extends AbstractAlgorithm {
 	@Override
 	public List<String> getErrors() {
 		// TODO Auto-generated method stub
+		
+		
 		return null;
 	}
 
-	private File createXMLMetadata(HashMap<String,Object> inputs){
-	
-		
-		ArrayList< ? > validationErrors = new ArrayList<Object>();
-		XmlOptions options; 
-		options = new XmlOptions();
-		options.setSavePrettyPrint();
-		options.setSaveAggressiveNamespaces();
-
-		HashMap<String, String> suggestedPrefixes = new HashMap<String, String>();
-		suggestedPrefixes.put("http://www.geoviqua.org/QualityInformationModel/4.0", "gvq");
-		options.setSaveSuggestedPrefixes(suggestedPrefixes);
-
-		options.setErrorListener(validationErrors);
-
-		
-		GVQMetadataDocument doc = GVQMetadataDocument.Factory.newInstance();
-		GVQMetadataType gvqMetadata = doc.addNewGVQMetadata();
-		gvqMetadata.addNewLanguage().setCharacterString("en");
-	    gvqMetadata.addNewMetadataStandardName().setCharacterString("GVQ");
-	    gvqMetadata.addNewMetadataStandardVersion().setCharacterString("1.0.0");
-	    gvqMetadata.addNewDateStamp().setDate(Calendar.getInstance());
-	    DQDataQualityType quality = gvqMetadata.addNewDataQualityInfo2().addNewDQDataQuality();
-	    GVQDataQualityType gvqQuality = (GVQDataQualityType) quality.substitute(new QName("http://www.geoviqua.org/QualityInformationModel/4.0",
-	                                                                                          "GVQ_DataQuality"),
-	                                                                                GVQDataQualityType.type);
-	    GVQDiscoveredIssueType issue = gvqQuality.addNewDiscoveredIssue().addNewGVQDiscoveredIssue();
-	    issue.addNewKnownProblem().setCharacterString(inputs.get("element1").toString());
-	    issue.addNewWorkAround().setCharacterString("solution");
-
-	        // validate schema conformity
-	        boolean isValid = doc.validate();
-	        if ( !isValid)
-	            System.out.println(Arrays.toString(validationErrors.toArray()));
-
-	        // print out as XML
-	        System.out.println(doc.xmlText(options));
-	        
-
-		
-		try {
-			 File tempFile = File.createTempFile("wpsMetdataTempFile", "txt");
-			 
-			 doc.save(tempFile);
-		
-		
-		return tempFile;
-		
-		}
-		catch(Exception e){
-			
-			LOG.error("createXMLMetadataError " + e);
-			
-		}
-		return null;
-	}
 	
 
 }

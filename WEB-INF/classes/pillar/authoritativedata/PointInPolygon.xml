@@ -24,6 +24,9 @@
 								</Schema>
 								</Format>
 								<Format>
+								<MimeType>application/json</MimeType>
+								</Format>
+								<Format>
 								<MimeType>text/xml; subtype=gml/3.1.0</MimeType>
 								<Schema>
 									http://schemas.opengis.net/gml/3.1.0/base/feature.xsd
@@ -51,6 +54,9 @@
 								<Schema>
 									http://schemas.opengis.net/gml/3.1.1/base/gml.xsd
 								</Schema>
+								</Format>
+								<Format>
+								<MimeType>application/json</MimeType>
 								</Format>
 								<Format>
 								<MimeType>text/xml; subtype=gml/3.1.0</MimeType>
@@ -90,7 +96,12 @@
 								<Schema>
 									http://schemas.opengis.net/gml/3.1.0/base/feature.xsd
 								</Schema>
+								
 								</Format>
+								<Format>
+								<MimeType>application/json</MimeType>
+								</Format>
+							
 		</Supported>
 		</ComplexOutput>
 	</Output>
@@ -119,6 +130,9 @@
 								<Schema>
 									http://schemas.opengis.net/gml/3.1.0/base/feature.xsd
 								</Schema>
+								</Format>
+								<Format>
+								<MimeType>application/json</MimeType>
 								</Format>
 		</Supported>
 		</ComplexOutput>
