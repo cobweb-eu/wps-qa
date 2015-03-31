@@ -2,10 +2,9 @@
 <WPSConfiguration xmlns="http://n52.org/wps">
   <Datahandlers>
     <ParserList>
-        <Parser name="GeoJSONParser"
-            className="org.n52.wps.io.datahandler.parser.GeoJSONParser" active="true">
-            <Format mimetype="application/json"/>
-        </Parser>
+      <Parser name="GeoJSONParser" className="org.n52.wps.io.datahandler.parser.GeoJSONParser" active="true">
+        <Format mimetype="application/json"/>
+      </Parser>
       <Parser name="GML3BasicParser" className="org.n52.wps.io.datahandler.parser.GML3BasicParser" active="true">
         <Format mimetype="text/xml; subtype=gml/3.1.1" schema="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
@@ -49,18 +48,6 @@
         <Format mimetype="application/image-ascii-grass"/>
       </Parser>
       <Parser name="GenericFileParser" className="org.n52.wps.io.datahandler.parser.GenericFileParser" active="true">
-        <Format mimetype="image/jpeg" encoding="base64"/>
-        <Format mimetype="image/png" encoding="base64"/>
-        <Format mimetype="application/x-geotiff" encoding="base64"/>
-        <Format mimetype="application/hdf4-eos" encoding="base64"/>
-        <Format mimetype="text/plain" encoding="base64"/>
-        <Format mimetype="application/x-zipped-shp"/>
-        <Format mimetype="application/img"/>
-        <Format mimetype="image/tiff"/>
-        <Format mimetype="image/geotiff"/>
-        <Format mimetype="application/geotiff"/>
-        <Format mimetype="application/dbase"/>
-        <Format mimetype="application/remap"/>
         <Format mimetype="application/x-erdas-hfa"/>
         <Format mimetype="application/x-netcdf"/>
         <Format mimetype="application/dgn"/>
@@ -89,6 +76,18 @@
         <Format mimetype="application/x-erdas-hfa" encoding="base64"/>
         <Format mimetype="application/x-netcdf" encoding="base64"/>
         <Format mimetype="application/dgn" encoding="base64"/>
+        <Format mimetype="image/jpeg" encoding="base64"/>
+        <Format mimetype="image/png" encoding="base64"/>
+        <Format mimetype="application/x-geotiff" encoding="base64"/>
+        <Format mimetype="application/hdf4-eos" encoding="base64"/>
+        <Format mimetype="text/plain" encoding="base64"/>
+        <Format mimetype="application/x-zipped-shp"/>
+        <Format mimetype="application/img"/>
+        <Format mimetype="image/tiff"/>
+        <Format mimetype="image/geotiff"/>
+        <Format mimetype="application/geotiff"/>
+        <Format mimetype="application/dbase"/>
+        <Format mimetype="application/remap"/>
       </Parser>
       <Parser name="GenericFileDataWithGTParser" className="org.n52.wps.io.datahandler.parser.GenericFileDataWithGTParser" active="true">
         <Format mimetype="application/x-zipped-shp"/>
@@ -132,6 +131,10 @@
         <Format mimetype="text/plain" encoding="base64"/>
       </Parser>
       <Parser name="GenericRasterFileParser" className="org.n52.wps.io.datahandler.parser.GenericRasterFileParser" active="true">
+        <Format mimetype="application/dbase"/>
+        <Format mimetype="application/remap"/>
+        <Format mimetype="application/x-erdas-hfa"/>
+        <Format mimetype="application/x-netcdf"/>
         <Format mimetype="application/dgn"/>
         <Format mimetype="image/jpeg"/>
         <Format mimetype="image/png"/>
@@ -156,10 +159,6 @@
         <Format mimetype="image/tiff"/>
         <Format mimetype="image/geotiff"/>
         <Format mimetype="application/geotiff"/>
-        <Format mimetype="application/dbase"/>
-        <Format mimetype="application/remap"/>
-        <Format mimetype="application/x-erdas-hfa"/>
-        <Format mimetype="application/x-netcdf"/>
       </Parser>
       <Parser name="GeotiffParser" className="org.n52.wps.io.datahandler.parser.GeotiffParser" active="true">
         <Format mimetype="image/tiff" encoding="base64"/>
@@ -217,8 +216,6 @@
         <Format mimetype="application/x-jsongeometry" encoding="UTF-8"/>
       </Generator>
       <Generator name="GML3BasicGenerator" className="org.n52.wps.io.datahandler.generator.GML3BasicGenerator" active="true">
-        <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd"/>
-        <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd"/>
@@ -227,6 +224,8 @@
         <Format mimetype="text/xml; subtype=gml/3.1.0" schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd"/>
         <Format mimetype="text/xml; subtype=gml/3.1.1" schema="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
         <Format mimetype="text/xml; subtype=gml/3.2.1" schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd"/>
+        <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd"/>
+        <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
         <Property name="featureTransformerDecimalPlaces" active="true">4</Property>
         <Property name="featureTransformerIncludeBounding" active="true">false</Property>
       </Generator>
@@ -243,9 +242,9 @@
         <Property name="featureTransformerIncludeBounding" active="true">false</Property>
       </Generator>
       <Generator name="SimpleGMLGenerator" className="org.n52.wps.io.datahandler.generator.SimpleGMLGenerator" active="true">
+        <Format mimetype="text/xml" schema="http://www.opengeospatial.org/gmlpacket.xsd"/>
         <Format mimetype="text/xml" schema="http://geoserver.itc.nl:8080/wps/schemas/gml/2.1.2/gmlpacket.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.1.2/gmlpacket.xsd"/>
-        <Format mimetype="text/xml" schema="http://www.opengeospatial.org/gmlpacket.xsd"/>
       </Generator>
       <Generator name="AsciiGrassGenerator" className="org.n52.wps.io.datahandler.generator.AsciiGrassGenerator" active="true">
         <Format mimetype="application/image-ascii-grass"/>
@@ -264,28 +263,6 @@
         <Format mimetype="text/xml"/>
       </Generator>
       <Generator name="GenericFileGenerator" className="org.n52.wps.io.datahandler.generator.GenericFileGenerator" active="true">
-        <Format mimetype="image/geotiff"/>
-        <Format mimetype="application/geotiff"/>
-        <Format mimetype="application/dbase"/>
-        <Format mimetype="application/remap"/>
-        <Format mimetype="application/x-erdas-hfa"/>
-        <Format mimetype="application/x-netcdf"/>
-        <Format mimetype="application/netcdf"/>
-        <Format mimetype="application/dgn"/>
-        <Format mimetype="image/jpeg"/>
-        <Format mimetype="image/png"/>
-        <Format mimetype="application/x-geotiff"/>
-        <Format mimetype="text/plain"/>
-        <Format mimetype="application/pdf"/>
-        <Format mimetype="application/zip"/>
-        <Format mimetype="text/html"/>
-        <Format mimetype="application/json"/>
-        <Format mimetype="text/csv"/>
-        <Format mimetype="application/x-zipped-shp" encoding="base64"/>
-        <Format mimetype="application/shp" encoding="base64"/>
-        <Format mimetype="application/img" encoding="base64"/>
-        <Format mimetype="image/tiff" encoding="base64"/>
-        <Format mimetype="image/geotiff" encoding="base64"/>
         <Format mimetype="application/geotiff" encoding="base64"/>
         <Format mimetype="application/dbase" encoding="base64"/>
         <Format mimetype="application/remap" encoding="base64"/>
@@ -310,12 +287,30 @@
         <Format mimetype="application/shp"/>
         <Format mimetype="application/img"/>
         <Format mimetype="image/tiff"/>
-      </Generator>
-      <Generator name="GenericFileDataWithGTGenerator" className="org.n52.wps.io.datahandler.generator.GenericFileDataWithGTGenerator" active="true">
         <Format mimetype="image/geotiff"/>
         <Format mimetype="application/geotiff"/>
         <Format mimetype="application/dbase"/>
         <Format mimetype="application/remap"/>
+        <Format mimetype="application/x-erdas-hfa"/>
+        <Format mimetype="application/x-netcdf"/>
+        <Format mimetype="application/netcdf"/>
+        <Format mimetype="application/dgn"/>
+        <Format mimetype="image/jpeg"/>
+        <Format mimetype="image/png"/>
+        <Format mimetype="application/x-geotiff"/>
+        <Format mimetype="text/plain"/>
+        <Format mimetype="application/pdf"/>
+        <Format mimetype="application/zip"/>
+        <Format mimetype="text/html"/>
+        <Format mimetype="application/json"/>
+        <Format mimetype="text/csv"/>
+        <Format mimetype="application/x-zipped-shp" encoding="base64"/>
+        <Format mimetype="application/shp" encoding="base64"/>
+        <Format mimetype="application/img" encoding="base64"/>
+        <Format mimetype="image/tiff" encoding="base64"/>
+        <Format mimetype="image/geotiff" encoding="base64"/>
+      </Generator>
+      <Generator name="GenericFileDataWithGTGenerator" className="org.n52.wps.io.datahandler.generator.GenericFileDataWithGTGenerator" active="true">
         <Format mimetype="application/x-erdas-hfa"/>
         <Format mimetype="application/x-netcdf"/>
         <Format mimetype="application/dgn"/>
@@ -356,18 +351,26 @@
         <Format mimetype="application/shp"/>
         <Format mimetype="application/img"/>
         <Format mimetype="image/tiff"/>
+        <Format mimetype="image/geotiff"/>
+        <Format mimetype="application/geotiff"/>
+        <Format mimetype="application/dbase"/>
+        <Format mimetype="application/remap"/>
       </Generator>
       <Generator name="GRASSXMLGenerator" className="org.n52.wps.io.datahandler.generator.GRASSXMLGenerator" active="true">
-        <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.0.0/feature.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/2.0.0" schema="http://schemas.opengis.net/gml/2.0.0/feature.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/2.1.1" schema="http://schemas.opengis.net/gml/2.1.1/feature.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/2.1.2" schema="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
         <Format mimetype="text/xml; subtype=gml/2.1.2.1" schema="http://schemas.opengis.net/gml/2.1.2.1/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.1.2.1/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.1.1/feature.xsd"/>
+        <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.0.0/feature.xsd"/>
+        <Format mimetype="text/xml; subtype=gml/2.0.0" schema="http://schemas.opengis.net/gml/2.0.0/feature.xsd"/>
+        <Format mimetype="text/xml; subtype=gml/2.1.1" schema="http://schemas.opengis.net/gml/2.1.1/feature.xsd"/>
+        <Format mimetype="text/xml; subtype=gml/2.1.2" schema="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
       </Generator>
       <Generator name="ProxyGMLGenerator4Files" className="org.n52.wps.io.datahandler.generator.ProxyGMLGenerator4Files" active="true">
+        <Format mimetype="text/xml; subtype=gml/3.0.0" schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd"/>
+        <Format mimetype="text/xml; subtype=gml/3.0.1" schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd"/>
+        <Format mimetype="text/xml; subtype=gml/3.1.0" schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd"/>
+        <Format mimetype="text/xml; subtype=gml/3.1.1" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
         <Format mimetype="text/xml; subtype=gml/3.2.1" schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
@@ -377,10 +380,6 @@
         <Format mimetype="text/xml" schema="http://www.opengeospatial.org/gmlpacket.xsd"/>
         <Format mimetype="text/xml" schema="http://geoserver.itc.nl:8080/wps/schemas/gml/2.1.2/gmlpacket.xsd"/>
         <Format mimetype="text/xml" schema="http://schemas.opengis.net/gml/2.1.2/gmlpacket.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/3.0.0" schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/3.0.1" schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/3.1.0" schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd"/>
-        <Format mimetype="text/xml; subtype=gml/3.1.1" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
       </Generator>
       <Generator name="WMSGenerator" className="org.n52.wps.io.datahandler.generator.GeoserverWMSGenerator" active="true">
         <Format mimetype="application/WMS"/>
@@ -391,10 +390,10 @@
       </Generator>
       <Generator name="WFSGenerator" className="org.n52.wps.io.datahandler.generator.GeoserverWFSGenerator" active="true">
         <Format mimetype="application/WFS"/>
-        <Property name="Geoserver_host" active="true">grasp.nottingham.ac.uk</Property>
-        <Property name="Geoserver_password" active="true">cobwebDyfi887</Property>
-        <Property name="Geoserver_port" active="true">8010</Property>
-        <Property name="Geoserver_username" active="true">admin</Property>
+        <Property name="Geoserver_host" active="true">dyfi.cobwebproject.eu</Property>
+        <Property name="Geoserver_password" active="true">c0bw3b</Property>
+        <Property name="Geoserver_port" active="true">443</Property>
+        <Property name="Geoserver_username" active="true">cobweb</Property>
       </Generator>
       <Generator name="WCSGenerator" className="org.n52.wps.io.datahandler.generator.GeoserverWCSGenerator" active="true">
         <Format mimetype="application/WCS"/>
@@ -420,9 +419,8 @@
         <Format mimetype="text/xml"/>
         <Format mimetype="text/xml; subtype=gml/2.1.2" schema="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
       </Generator>
-      <Generator name="GeoJSONGenerator"
-          className="org.n52.wps.io.datahandler.generator.GeoJSONGenerator" active="true">
-          <Format mimetype="application/json"/>
+      <Generator name="GeoJSONGenerator" className="org.n52.wps.io.datahandler.generator.GeoJSONGenerator" active="true">
+        <Format mimetype="application/json"/>
       </Generator>
     </GeneratorList>
   </Datahandlers>
@@ -484,6 +482,7 @@
       <Property name="Algorithm" active="true">pillar.cleaning.PositionBoundingBox</Property>
       <Property name="Algorithm" active="true">pillar.lbs.GetSpatialAccuracy</Property>
       <Property name="Algorithm" active="true">pillar.lbs.LineOfSightCoordinates</Property>
+      <Property name="Algorithm" active="true">storage.geoserver.StoreWFSNamedOutput</Property>
       <Property name="Algorithm" active="true">storage.geoserver.StoreWFSOutput</Property>
     </Repository>
     <Repository name="UploadedAlgorithmRepository" className="org.n52.wps.server.UploadedAlgorithmRepository" active="false"/>
