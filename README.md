@@ -1,6 +1,6 @@
-# Web Processing Service for COBWEB-QA#
+# 52North Web Processing Service for COBWEB-QA #
 
-This repository holds a Web Processing Service for COBWEB-QA tests. The WPS is a Tomcat web app based on the 52North implementation.
+This repository holds a 52North Web Processing Service v.3.3.0 for COBWEB-QA tests. The processes on their own can be found https://github.com/cobweb-eu/QA_wps_processes
 
 ## Installation
 
